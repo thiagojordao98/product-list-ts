@@ -38,4 +38,13 @@ table {
   button:hover {
     background-color: #0056b3;
   }
+
+  .btn-update {
+  margin-right: 5px;
+}
+
+.btn-delete:hover {
+  background-color: red;
+  color: white;
+}
   

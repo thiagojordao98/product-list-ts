@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductForm from './ProductForm';
 import './ProductList.css';
 import { formatPrice } from './ProductForm';
+import axios from 'axios';
 
 interface Product {
   name: string;
@@ -41,6 +42,7 @@ const ProductList: React.FC = () => {
               <tr>
                 <th>Nome</th>
                 <th>Valor</th>
+                <th>Disponível</th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +50,11 @@ const ProductList: React.FC = () => {
                 <tr key={index}>
                   <td>{product.name}</td>
                   <td>{formatPrice(product.price)}</td>
+                  <td>{product.available ? 'Sim' : 'Não'}</td>
+                  <td className='btn-products-list'>
+                    <button className='btn-update' onClick={() => handleUpdate(product.id)}>Alterar</button>
+                    <button className='btn-delete' onClick={() => handleDelete(product.id)}>Deletar</button>
+                  </td>
                 </tr>
               ))}
             </tbody>
