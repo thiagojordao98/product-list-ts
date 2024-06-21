@@ -36,3 +36,7 @@ Thumbs.db
 *.swp
 *.lock
 coverage/
+
+# Prisma
+prisma/migrations/
+prisma/dev.db
