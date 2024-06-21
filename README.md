@@ -1,6 +1,31 @@
 # Cadastro e Listagem de Produtos
 
-Bem-vindo ao projeto de **Cadastro e Listagem de Produtos**! Este é um exemplo prático de uma aplicação full stack que utiliza TypeScript tanto no frontend quanto no backend, utilizando React com Vite para o frontend e Node.js com Express para o backend. O objetivo deste projeto é demonstrar uma forma simples e eficiente de gerenciar produtos, desde o cadastro até a listagem, com uma interface de usuário amigável e uma API robusta.
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+## Sumário
+
+- [📸 Screenshots](#-screenshots)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Funcionalidades](#funcionalidades)
+  - [Cadastro de Produtos](#cadastro-de-produtos)
+  - [Listagem de Produtos](#listagem-de-produtos)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação e Execução](#instalação-e-execução)
+
+## 📸 Screenshots
+
+### Tela de Cadastro 
+![image](https://github.com/thiagojordao98/product-list-ts/assets/47632506/06594ba6-efff-4acc-bb91-ed60361a4ff3)
+
+### Tela de Listagem
+![image](https://github.com/thiagojordao98/product-list-ts/assets/47632506/36aa67c7-f68f-4f06-a221-24d5f3977aca)
+
+### Produtos Cadastrados no Banco de Dados
+![image](https://github.com/thiagojordao98/product-list-ts/assets/47632506/07b6a037-ccaa-4ac8-a961-098667ec7479)
 
 ## Tecnologias Utilizadas
 
@@ -12,6 +37,7 @@ Bem-vindo ao projeto de **Cadastro e Listagem de Produtos**! Este é um exemplo 
 - **Backend:**
   - [Node.js](https://nodejs.org/)
   - [Express](https://expressjs.com/)
+  - [Prisma](https://www.prisma.io/)
   - [TypeScript](https://www.typescriptlang.org/)
 
 ## Funcionalidades
@@ -87,7 +113,7 @@ my-app/
 3. **Inicie o servidor:**
 
    ```sh
-   npm start
+   npm run dev
    ```
 
    O servidor estará rodando em `http://localhost:3000`.
@@ -97,7 +123,7 @@ my-app/
 1. **Navegue até a pasta do cliente:**
 
    ```sh
-   cd ../client
+   cd ../front-end
    ```
 
 2. **Instale as dependências:**
@@ -124,8 +150,3 @@ my-app/
 2. **Listagem de Produtos:**
    - Após o cadastro, a listagem de produtos será exibida automaticamente.
    - Utilize o botão "Cadastrar Novo Produto" para adicionar novos produtos à lista.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais deta
-
