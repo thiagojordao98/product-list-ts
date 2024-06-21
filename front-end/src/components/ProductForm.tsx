@@ -1,4 +1,5 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
+import './ProductForm.css';
 
 interface ProductFormProps {
   onAddProduct: (product: Product) => void;
@@ -11,11 +12,33 @@ interface Product {
   available: boolean;
 }
 
+export const formatPrice = (value: number): string => {
+    return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    }).format(value);
+    };
+
 const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [formattedPrice, setFormattedPrice] = useState<string>('');
   const [available, setAvailable] = useState<string>('sim');
+
+  useEffect(() => {
+    const numericPrice = parseFloat(price);
+    if (!isNaN(numericPrice)) {
+      setFormattedPrice(formatPrice(numericPrice));
+    }
+  }, [price]);
+
+    
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '');
+    const numberValue = value ? parseFloat(value) / 100 : 0;
+    setPrice(numberValue.toString());
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -27,7 +50,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
       available: available === 'sim' 
     };
 
-    const response = await fetch('http://localhost:5000/products', {
+    const response = await fetch('http://localhost:3000/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +75,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
       </div>
       <div>
         <label>Valor do produto:</label>
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="text" value={formattedPrice} onChange={handlePriceChange} required />
       </div>
       <div>
         <label>Disponível para venda:</label>

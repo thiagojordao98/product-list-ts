@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from './ProductForm';
+import './ProductList.css';
+import { formatPrice } from './ProductForm';
 
 interface Product {
   name: string;
@@ -13,7 +15,7 @@ const ProductList: React.FC = () => {
   const [showForm, setShowForm] = useState<boolean>(false);
 
   const fetchProducts = async () => {
-    const response = await fetch('http://localhost:5000/products');
+    const response = await fetch('http://localhost:3000/products');
     const data: Product[] = await response.json();
     setProducts(data);
   };
@@ -45,7 +47,7 @@ const ProductList: React.FC = () => {
               {products.map((product, index) => (
                 <tr key={index}>
                   <td>{product.name}</td>
-                  <td>{product.price}</td>
+                  <td>{formatPrice(product.price)}</td>
                 </tr>
               ))}
             </tbody>
