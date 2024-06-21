@@ -6,6 +6,16 @@
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+## Sumário
+
+- [📸 Screenshots](#-screenshots)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Funcionalidades](#funcionalidades)
+  - [Cadastro de Produtos](#cadastro-de-produtos)
+  - [Listagem de Produtos](#listagem-de-produtos)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação e Execução](#instalação-e-execução)
+
 ## 📸 Screenshots
 
 ### Tela de Cadastro 
@@ -140,8 +150,3 @@ my-app/
 2. **Listagem de Produtos:**
    - Após o cadastro, a listagem de produtos será exibida automaticamente.
    - Utilize o botão "Cadastrar Novo Produto" para adicionar novos produtos à lista.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais deta
-
